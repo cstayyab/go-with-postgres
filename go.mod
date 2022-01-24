@@ -1,4 +1,4 @@
-module cstayyab/orders-main
+module github.com/cstayyab/go-postgres-demo
 
 go 1.17
 
