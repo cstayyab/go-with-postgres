@@ -26,6 +26,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/json-iterator/go v1.1.9 // indirect
+	github.com/jszwec/csvutil v1.6.0
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/lib/pq v1.10.4
 	github.com/mattn/go-isatty v0.0.12 // indirect
