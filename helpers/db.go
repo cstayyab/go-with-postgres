@@ -8,7 +8,6 @@ import (
 
 type Company struct {
 	gorm.Model
-	ID   uint   `gorm:"primaryKey"`
 	Name string `gorm:"column:company_name"`
 }
 
@@ -18,7 +17,6 @@ func (Company) TableName() string {
 
 type Customer struct {
 	gorm.Model
-	ID          string         `gorm:"primaryKey"`
 	Username    string         `gorm:"unique;not null;column:login"`
 	Password    string         `gorm:"column:password"`
 	Name        string         `gorm:"column:name"`
@@ -32,7 +30,6 @@ func (Customer) TableName() string {
 
 type Order struct {
 	gorm.Model
-	ID       uint     `gorm:"primaryKey"`
 	Created  int64    `gorm:"autoCreateTime;column:created_at"`
 	Name     string   `gorm:"column:order_name"`
 	Customer Customer `gorm:"embedded;column:customer_id"`
@@ -44,7 +41,6 @@ func (Order) TableName() string {
 
 type OrderItem struct {
 	gorm.Model
-	ID          uint    `gorm:"primaryKey"`
 	Order       Order   `gorm:"embedded;column:order_id"`
 	PPU         float64 `gorm:"type:decimal(9,4);column:price_per_unit"`
 	Quantity    uint    `gorm:"column:quantity"`
@@ -57,7 +53,6 @@ func (OrderItem) TableName() string {
 
 type Delivery struct {
 	gorm.Model
-	ID        uint      `gorm:"primaryKey"`
 	OrderItem OrderItem `gorm:"embedded;column:order_item_id"`
 	Quantity  uint      `gorm:"column:delivered_quantity"`
 }
