@@ -18,7 +18,7 @@ func (Company) TableName() string {
 
 type Customer struct {
 	gorm.Model
-	ID          uint           `gorm:"primaryKey;column:user_id"`
+	ID          string         `gorm:"primaryKey;column:user_id"`
 	Username    string         `gorm:"unique;not null;column:login"`
 	Password    string         `gorm:"column:password"`
 	Name        string         `gorm:"column:name"`
